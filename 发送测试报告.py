@@ -16,6 +16,10 @@ def send_email(test_report):
     username = '353229657'                                      # 邮箱登录名
     passwd = 'xyifsqajcjvacaca'                                         # 密码
     message = MIMEText(mail_body, 'html', 'utf-8')              # 设置邮件格式
+    attach = MIMEText(open(test_report, 'rb').read(), 'base64', 'utf-8') # 添加附件
+    attach.add_header('Content-Disposition','attachment',filename=test_report.split('/')[3])
+    message.attach(attach)
+
     message['Subject'] = Header(subject, charset='utf-8')
     message['from'] = sender
     message['To'] = ','.join(receiver)
