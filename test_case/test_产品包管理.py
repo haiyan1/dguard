@@ -35,11 +35,11 @@ class Product(unittest.TestCase):
 
         # 切换到产品一级菜单
         client.find_element_by_xpath('//*[@id="app"]/div/div/ul/li[4]/a/span').click()
-        time.sleep(1)
+        time.sleep(2)
 
         # 点击【产品包管理】菜单
         client.find_element_by_xpath('//*[@id="app"]/div/div/ul/li[4]/ul/li[2]/a').click()
-        time.sleep(1)
+        time.sleep(2)
         # 点击“添加产品包”按钮
         client.find_element_by_xpath('//*[@id="app"]/div/div/div/div/div/div/div[1]/div[2]/div/button/span').click()
 
@@ -51,23 +51,23 @@ class Product(unittest.TestCase):
         client.find_element_by_xpath(
             '//*[@id="app"]/div/div/div/div/div/div/div[1]/div/div[2]/form/div[2]/div/div[1]/input').send_keys(
             self.product_name)
-        time.sleep(1)
+        time.sleep(2)
         client.find_element_by_xpath(
             '//*[@id="app"]/div/div/div/div/div/div/div[1]/div/div[2]/form/div[3]/div/div/div[1]/input').click()
-        time.sleep(1)
+        time.sleep(2)
         # 产品包类型选择“实时音频业务”
         client.find_element_by_xpath('/html/body/div[3]/div/div[1]/ul/li[2]/span').click()
 
         # 点击产品列表
-        time.sleep(1)
+        time.sleep(2)
         client.find_element_by_xpath(
             '//*[@id="app"]/div/div/div/div/div/div/div[1]/div/div[2]/form/div[4]/div/div/div[2]/input').click()
         # 选择第一个产品
-        time.sleep(1)
+        time.sleep(2)
         client.find_element_by_xpath('/html/body/div[4]/div/div[1]/ul/li[1]/span').click()
         client.find_element_by_xpath('//*[@id="app"]/div/div/div/div/div/div/div[1]/div/div[2]').click()
         # 点击确定按钮，提交表单信息
-        time.sleep(1)
+        time.sleep(2)
         client.find_element_by_xpath(
             '//*[@id="app"]/div/div/div/div/div/div/div[1]/div/div[3]/span/button[2]/span').click()
         time.sleep(2)
