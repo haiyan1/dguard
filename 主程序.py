@@ -20,7 +20,7 @@ discover = unittest.defaultTestLoader.discover(case_path,pattern="test*.py")
 # 将测试用例加入到测试容器(套件)中
 testunit = unittest.TestSuite()
 testunit.addTest(discover)
-#testunit.addTest(unittest.makeSuite(test_登录.Denglu))  # baidu.Baidu中的baidu为用例所在的.py文件的名称，Baidu为测试用例集的名称
+# testunit.addTest(unittest.makeSuite(test_登录.Denglu))  # baidu.Baidu中的baidu为用例所在的.py文件的名称，Baidu为测试用例集的名称
 # testunit.addTest(unittest.makeSuite(test_产品管理.Service))
 # testunit.addTest(unittest.makeSuite(test_产品包管理.Product))
 # testunit.addTest(unittest.makeSuite(test_授权管理.Store))
