@@ -14,14 +14,14 @@ class Denglu(unittest.TestCase):
     def setUp(self):
         self.client = webdriver.Chrome()
         time.sleep(2)
-        self.url="http://10.8.40.233:8080/api/index.html#/login"
+        self.url = "http://10.8.40.233:8080/api/index.html#/login"
         self.verificationErrors = []
         self.accept_next_alert = True
 
     def test_denglu(self):
         client = self.client
         client.get(self.url)
-        time.sleep(2)
+        time.sleep(5)
 
         # 获取用户名输入框
         e = client.find_element_by_xpath('//*[@id="app"]/div/div/div/div/div/div/form/div[1]/input')
@@ -39,13 +39,16 @@ class Denglu(unittest.TestCase):
         try:
             # 登录成功后跳转页面
             client.switch_to.window(client.window_handles[-1])
+            time.sleep(2)
             # 在跳转页面上获取“监控业务”菜单，能获取到则登录成功，获取失败则登录失败
-            element = client.find_element_by_xpath('//*[@id="app"]/div/div/ul/li[2]/ul/li[1]/a')
-            print("")
-            print("登录成功")
-        except:
+            element = client.find_element_by_xpath('//*[@id="app"]/div/div/ul/li[2]/ul/li[1]/a').text
+            self.assertEqual(element, "业务监控")
+        except AssertionError as e:
+            self.verificationErrors.append(str(e))
+        except Exception as e:
             print("")
             print("登录失败")
+            self.verificationErrors.append(str(e))
 
     def tearDown(self):
         self.client.quit()
