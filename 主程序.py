@@ -25,7 +25,7 @@ testunit.addTest(discover)
 # testunit.addTest(unittest.makeSuite(test_产品包管理.Product))
 # testunit.addTest(unittest.makeSuite(test_授权管理.Store))
 
-logger.info("测试log模块，暂时就优化到这一步，后续再改进")
+#logger.info("测试log模块，暂时就优化到这一步，后续再改进")
 # 定义个报告存放路径，支持相对路径。
 filename = 'E:\\python\\report\\' + u"测试报告_" + time + "_result.html"
 fp = open(filename, "wb")
