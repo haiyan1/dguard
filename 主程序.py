@@ -11,7 +11,6 @@ from email.header import Header
 import datetime
 import os
 from unittest import defaultTestLoader
-from log import run_log as logger
 
 time = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
 
