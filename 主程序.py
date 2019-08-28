@@ -34,4 +34,4 @@ runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title=u"测试报告", descrip
 result=runner.run(testunit)
 print(result)
 fp.close()
-#发送测试报告.send_email(filename)
+发送测试报告.send_email(filename)
